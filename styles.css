@@ -1035,10 +1035,6 @@ body {
 }
 
 /* Forms */
-.auth-form {
-    margin-bottom: 1.5rem;
-}
-
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -1754,19 +1750,6 @@ body {
         padding: 1.5rem;
     }
     
-    .pricing-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .pricing-card-popular {
-        transform: none;
-    }
-    
-    .pricing-card-popular:hover {
-        transform: translateY(-4px);
-    }
-    
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1859,10 +1842,6 @@ body {
     }
     
     .features {
-        padding: 3rem 0;
-    }
-    
-    .pricing {
         padding: 3rem 0;
     }
     

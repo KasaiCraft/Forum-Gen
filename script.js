@@ -84,14 +84,6 @@ function switchModal(fromModalId, toModalId) {
 }
 
 // Specific modal functions
-function showLoginModal() {
-    showModal('loginModal');
-}
-
-function showSignupModal() {
-    showModal('signupModal');
-}
-
 function showDemoModal() {
     showModal('demoModal');
 }
@@ -150,55 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     top: offsetTop,
                     behavior: 'smooth'
                 });
-            }
-        });
-    });
-});
-
-// Form submissions
-document.addEventListener('DOMContentLoaded', () => {
-    const authForms = document.querySelectorAll('.auth-form');
-    
-    authForms.forEach(form => {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-            
-            // Simple validation
-            const inputs = form.querySelectorAll('input[required]');
-            let isValid = true;
-            
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    isValid = false;
-                    input.style.borderColor = 'var(--error-color)';
-                } else {
-                    input.style.borderColor = 'var(--border-color)';
-                }
-            });
-            
-            if (isValid) {
-                // Simulate form submission
-                const submitBtn = form.querySelector('button[type="submit"]');
-                const originalText = submitBtn.textContent;
-                
-                submitBtn.textContent = 'Loading...';
-                submitBtn.disabled = true;
-                
-                setTimeout(() => {
-                    alert('Account created successfully! Welcome to FormBuilder Pro.');
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                    
-                    // Close modal
-                    const modal = form.closest('.modal');
-                    if (modal) {
-                        closeModal(modal.id);
-                    }
-                }, 1500);
             }
         });
     });
@@ -547,25 +490,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 1500);
             }
         }
-    });
-});
-
-// Add some interactive elements to pricing cards
-document.addEventListener('DOMContentLoaded', () => {
-    const pricingCards = document.querySelectorAll('.pricing-card');
-    
-    pricingCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = card.classList.contains('pricing-card-popular') 
-                ? 'scale(1.05) translateY(-8px)' 
-                : 'translateY(-8px)';
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = card.classList.contains('pricing-card-popular') 
-                ? 'scale(1.05)' 
-                : '';
-        });
     });
 });
 
